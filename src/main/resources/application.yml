@@ -1,0 +1,15 @@
+
+spring:
+  cloud:
+    aws:
+      credentials:
+        access-key:
+        secret-key:
+      region:
+        static: us-east-1
+
+sqs:
+  notification:
+    queue:
+      name: .fifo
+      region: us-east-1
