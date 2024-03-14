@@ -26,9 +26,11 @@ dependencies {
 	implementation "software.amazon.awssdk:sqs:$awsSdkVersion"
 
 	implementation "org.flywaydb:flyway-core:$flywayDbVersion"
-	implementation "io.r2dbc:r2dbc-postgresql:$r2dbcVersion"
+	implementation "org.postgresql:r2dbc-postgresql:$r2dbcVersion"
 	implementation "org.postgresql:postgresql:$postgresVersion"
+	implementation "io.github.cdimascio:java-dotenv:$cdimascioVersion"
 
+	implementation "com.google.code.findbugs:jsr305:$googleFindBugsVersion"
 	implementation "org.mapstruct:mapstruct:$mapStructVersion"
 
 	compileOnly "org.projectlombok:lombok"

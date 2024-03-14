@@ -1,5 +1,13 @@
-
 spring:
+  r2dbc:
+    url: r2dbc:pool:postgres://localhost:5432/postgres
+    username: postgres
+    password: postgres
+  flyway:
+    url: jdbc:postgresql://localhost:5432/postgres
+    user: postgres
+    password: postgres
+    locations: classpath:db/migration
   cloud:
     aws:
       credentials:
@@ -11,5 +19,5 @@ spring:
 sqs:
   notification:
     queue:
-      name: .fifo
+      name: awssqsdemo.fifo
       region: us-east-1
