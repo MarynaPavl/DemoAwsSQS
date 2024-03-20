@@ -1,23 +1,25 @@
 spring:
+  config:
+    import: optional:file:.env[.properties]
   r2dbc:
-    url: r2dbc:pool:postgres://localhost:5432/postgres
-    username: postgres
-    password: postgres
+    url: ${EXAMPLE_R2DBC_URL}
+    username: ${EXAMPLE_R2DBC_USER}
+    password: ${EXAMPLE_R2DBC_PASSWORD}
   flyway:
-    url: jdbc:postgresql://localhost:5432/postgres
-    user: postgres
-    password: postgres
+    url: ${EXAMPLE_DB_URL}
+    user: ${EXAMPLE_DB_USER}
+    password: ${EXAMPLE_DB_PASSWORD}
     locations: classpath:db/migration
   cloud:
     aws:
       credentials:
-        access-key:
-        secret-key:
+        access-key: ${EXAMPLE_AWS_ACCESS_KEY}
+        secret-key: ${EXAMPLE_AWS_SECRET_KEY}
       region:
-        static: us-east-1
+        static: ${EXAMPLE_AWS_REGION}
 
 sqs:
-  notification:
+  notifications:
     queue:
-      name: awssqsdemo.fifo
-      region: us-east-1
+      name: ${EXAMPLE_SQS_QUEUE_NAME}
+      region: ${EXAMPLE_SQS_QUEUE_NAME}
